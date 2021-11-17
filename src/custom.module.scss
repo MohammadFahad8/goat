@@ -1,0 +1,108 @@
+.Navcolor{
+	background-color: rgb(92 82 77)!important;
+	a{
+	color:#fff !important;
+	}
+}
+.BGwheat{
+	background-color: rgb(255, 247, 243);
+	font-weight: 600;
+}
+.hackdiv
+{
+	visibility: hidden !important;
+	width: 5%;
+}
+
+body {
+	color: #626262;
+	font-family: roboto;
+}
+form {
+	padding: 20px;
+}
+.formGroupDefault {
+	background-color: #fff;
+	position: relative;
+	border: 1px solid #ddd;
+	border-radius: 2px;
+	padding-top: 7px;
+	padding-left: 12px;
+	padding-right: 12px;
+	padding-bottom: 4px;
+	overflow: hidden;
+	width: 100%;
+	-webkit-transition: background-color 0.2s ease;
+	transition: background-color 0.2s ease;
+	&.focused {
+		background-color: #f0f0f0;
+	}
+	&.required {
+		&:after {
+			color: #f55753;
+			content: "*";
+			font-family: arial;
+			font-size: 20px;
+			position: absolute;
+			right: 12px;
+			top: 6px;
+		}
+	}
+	.formControl {
+		border: 0;
+		padding: 0;
+		margin-top: -4px;
+		background: 0 0;
+		border-radius: 0;
+		resize: vertical;
+		&:not(textarea) {
+			height: 25px;
+			min-height: 25px;
+		}
+		&:focus {
+			outline: 0 !important;
+			box-shadow: none;
+		}
+	}
+	select {
+		&.formControl {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			height: inherit !important;
+		}
+	}
+	.controLabel {
+		margin: 0;
+		display: block;
+		line-height: 20px;
+		margin-bottom: 2px;
+		opacity: 1;
+		-webkit-transition: opacity 0.2s ease;
+		transition: opacity 0.2s ease;
+	}
+}
+.formGroup {
+	.controLabel {
+		font-size: 10.5px;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		font-weight: 500;
+	}
+}
+.formGroupDefault .custom-select.is-invalid,
+.formGroupDefault .formControl.is-invalid,
+.was-validated .formGroupDefault .custom-select:invalid,
+.was-validated .formGroupDefault .formControl:invalid {
+	box-shadow: none;
+	border-bottom: 1px solid #dc3545;
+}
+.formGroupDefault .custom-select.is-valid,
+.formGroupDefault .formControl.is-valid,
+.was-validated .formGroupDefault .custom-select:valid,
+.was-validated .formGroupDefault .formControl:valid {
+	box-shadow: none;
+}
+
+@media all and (max-width:480px) {
+	.customBtnLevel { width: 100%; display:block; }
+ } 

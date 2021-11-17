@@ -1,0 +1,113 @@
+body {
+	color: #626262;
+	font-family: roboto;
+}
+form {
+	padding: 20px;
+}
+.form-group-default {
+	background-color: #fff;
+	position: relative;
+	border: 1px solid #ddd;
+	border-radius: 2px;
+	padding-top: 7px;
+	padding-left: 12px;
+	padding-right: 12px;
+	padding-bottom: 4px;
+	overflow: hidden;
+	width: 100%;
+	-webkit-transition: background-color 0.2s ease;
+	transition: background-color 0.2s ease;
+	&.focused {
+		background-color: #f0f0f0;
+	}
+	&.required {
+		&:after {
+			color: #f55753;
+			content: "*";
+			font-family: arial;
+			font-size: 20px;
+			position: absolute;
+			right: 12px;
+			top: 6px;
+		}
+	}
+	.form-control {
+		border: 0;
+		padding: 0;
+		margin-top: -4px;
+		background: 0 0;
+		border-radius: 0;
+		resize: vertical;
+		&:not(textarea) {
+			height: 25px;
+			min-height: 25px;
+		}
+		&:focus {
+			outline: 0 !important;
+			box-shadow: none;
+		}
+	}
+	select {
+		&.form-control {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			height: inherit !important;
+		}
+	}
+	.control-label {
+		margin: 0;
+		display: block;
+		line-height: 20px;
+		margin-bottom: 2px;
+		opacity: 1;
+        float: left;
+		-webkit-transition: opacity 0.2s ease;
+		transition: opacity 0.2s ease;
+	}
+}
+.form-group {
+	.control-label {
+		font-size: 10.5px;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		font-weight: 500;
+	}
+}
+.form-group-default .custom-select.is-invalid,
+  .form-group-default .form-control.is-invalid,
+  .was-validated .form-group-default .custom-select:invalid,
+  .was-validated .form-group-default .form-control:invalid {
+	box-shadow: none;
+	border-bottom: 1px solid #dc3545;
+}
+.form-group-default .custom-select.is-valid,
+  .form-group-default .form-control.is-valid,
+  .was-validated .form-group-default .custom-select:valid,
+  .was-validated .form-group-default .form-control:valid {
+	box-shadow: none;
+}
+
+
+.btnBorder{
+	border:1px solid#ff9900;
+	color:#ff9900 !important
+	
+}
+.btnOrange{
+	background-color:#ff9900;
+	color:white !important;
+	
+}
+.AccountHeading
+{
+	color:#000;
+	font-weight: 800;
+	font-size: revert;
+	font-family: sans-serif;
+}
+.selectconfig{
+	font-weight: 400;
+	font-size: x-large;
+	font-family: sans-serif;
+}
