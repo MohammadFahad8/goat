@@ -106,3 +106,9 @@ form {
 @media all and (max-width:480px) {
 	.customBtnLevel { width: 100%; display:block; }
  } 
+ @media all and (min-width:768px) {
+	.cardHeadin
+	{
+		font-size: larger;
+	}
+ } 

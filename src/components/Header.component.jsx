@@ -2,68 +2,78 @@ import React from 'react';
 import STYLES from '../custom.module.scss'
 import '../app.scss'
 import warning from '../utils/icons/warning.png'
-import '../header.scss';
+import UserImage from '../utils/images/Image.png'
+import MainLogo from '../utils/images/LOGOIPSUM.png'
+import SIDEBAR from '../header.module.scss';
+import {Link} from 'react-router-dom';
 import $ from 'jquery';
+import CORE from '../index.module.scss'
 export const Header = ()=>{
 
 
   const openPane = () =>
-  {
+  {var s = SIDEBAR['sidebar']
+    var a =SIDEBAR['active']
     
-    $('#sidebar').addClass('active');
+    console.log(a)
+    $('#'+s).addClass(a);
     $('.overlay').fadeIn();
     $('.collapse.in').toggleClass('in');
     $('a[aria-expanded=true]').attr('aria-expanded', 'false');
   }
   const dismissPane = () =>
   {
-    $('#sidebar').removeClass('active');
+    var s = SIDEBAR['sidebar']
+    var a =SIDEBAR['active']
+    $('#'+s).removeClass(a);
     $('.overlay').fadeOut();
   }
 
     return(
 <div>
     
-    <div className= {'row justify-content-center text-center w-100 '+ STYLES.BGwheat}>
-      <div className="text-center"><img src={warning} width="20" height="20"/></div>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab incidunt, neque, 
+    <div className= {[CORE['row'], CORE['justify-content-center'], CORE['textCenter'], CORE['w-100']].join(" ")+' '+ STYLES.BGwheat}>
+      <div className={CORE['textCenter']}><img src={warning} width="20" height="20"/></div>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab incidunt, neque, 
 
     </div>
     
-    <nav id="sidebar" className="d-md-none d-xl-none d-lg-none">
+    <nav id={SIDEBAR['sidebar']} className={[CORE['d-md-none'], CORE['d-xl-none'], CORE['d-lg-none']].join(" ")}>
                
 
-               <div class="sidebar-header">
-                 <div className="row" >
-                   <div className="col-4">
-             <div id="dismiss text-center" >
-                   <i class="fa fa-close mt-2 float-left" onClick={dismissPane}></i>
+               <div className={SIDEBAR['sidebar-header']}>
+                 <div className={CORE['row']} >
+                   <div className={CORE['col-4']}>
+             <div id="dismiss textCenter">
+                   <i className={'fa fa-close'+ ' '+[CORE['mt-2'], CORE['float-left']].join(" ")} onClick={dismissPane}></i>
                </div>
                    </div>
-                   <div className="col-4">
+                   <div className={CORE['col-4']}>
                    <h3>Logo</h3>
                    </div>
-                   <div className="col-4">
-             <div id="dismiss text-center" >
-                   <i class="fa fa-sign-out mt-2 float-right" ></i>
+                   <div className={CORE['col-4']}>
+             <div id="dismiss textCenter" >
+                   <i className={'fa fa-sign-out'+ '  '+[CORE['mt-2'], CORE['float-right']].join(" ")}></i>
                </div>
                    </div>
                    </div>
                </div>
 
-               <ul class="list-unstyled components">
-                   <p className="text-left">Dashboard</p>
-                   <li class="active">
+               <ul className={[CORE['list-unstyled'] , SIDEBAR['components']].join(" ")}>
+                   <p className={CORE['textLeft']}>Dashboard</p>
+                   <li className={CORE['active']}>
                        {/* <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a> */}
-                       <ul className="text-left list-group  ">
-                           <li className="list-group-item bg-transparent border-0 text-left"><input className="bg-transparent  border-success acc border-left-0 border-top-0 border-right-0" placeholder="Account" /> </li>
-                           <li className="list-group-item bg-transparent border-0 text-left"><a href="#">Help</a></li>
+                       <ul className={[CORE['textLeft'], CORE['list-group']].join(" ")}>
+                           <li className={[CORE['list-group-item'], CORE['bg-transparent'], CORE['border-0'], CORE['textLeft']].join(" ")}>
+                             <input className={[CORE['bg-transparent'], CORE['border-success'] + ' acc ' +CORE['border-left-0'],CORE['border-top-0'],CORE['border-right-0']].join(" ")} placeholder="Account" />
+                              </li>
+                           <li className={[CORE['list-group-item'], CORE['bg-transparent'] ,CORE['border-0'], CORE['textLeft']].join(" ")}><a href="#">Help</a></li>
                            {/* <li><a href="#">Home 3</a></li> */}
                        </ul>
                    </li>
                    {/* <li>
                        <a href="#">About</a>
                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>
-                       <ul class="collapse list-unstyled" id="pageSubmenu">
+                       <ul className="collapse list-unstyled" id="pageSubmenu">
                            <li><a href="#">Page 1</a></li>
                            <li><a href="#">Page 2</a></li>
                            <li><a href="#">Page 3</a></li>
@@ -77,37 +87,39 @@ export const Header = ()=>{
                    </li> */}
                </ul>
 
-               {/* <ul class="list-unstyled CTAs">
-                   <li><a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a></li>
-                   <li><a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a></li>
+               {/* <ul className="list-unstyled CTAs">
+                   <li><a href="https://bootstrapious.com/tutorial/files/sidebar.zip" className="download">Download source</a></li>
+                   <li><a href="https://bootstrapious.com/p/bootstrap-sidebar" className="article">Back to article</a></li>
                </ul> */}
            </nav>
-        <nav className={'navbar navbar-expand-lg navbar-dark '+ STYLES.Navcolor}>
+        <nav className={[CORE['navbar'], CORE['navbar-expand-lg'], CORE['navbar-dark']].join(" ") +'  '+ STYLES.Navcolor}>
             { /*ORIGINAL <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button> */}
-  <button className="navbar-toggler" type="button"   onClick={openPane}  >
-    <span className="navbar-toggler-icon text-white"></span>
+  <button className={CORE['navbar-toggler']} type="button"   onClick={openPane}  >
+    <span className={[CORE['navbar-toggler-icon'] , CORE['text-white']].join(" ")}></span>
   </button>
 
-  <a className="navbar-brand offset-md-1 offset-0" href="#">Logo</a>
-  <div id="dismiss text-right" className="d-md-none d-lg-none d-xl-none logout-btn-mob" >
-                   <i class="fa fa-sign-out mt-2 float-right" ></i>
+  <a className={[CORE['navbar-brand'] , CORE['offset-md-1'], CORE['offset-0']].join(" ")} href="#"><img className={[CORE['w-50'], CORE['w-md-100']].join(" ")} src={MainLogo}/></a>
+  <div id="dismiss text-right" className={[CORE['d-md-none'], CORE['d-lg-none'],CORE['d-xl-none'], SIDEBAR['logout-btn-mob']].join(" ")} >
+                   <i className={'fa fa-sign-out'+'  '+[CORE['mt-2'],CORE['float-right']].join(" ")}></i>
                </div>
 
-  <div className="collapse navbar-collapse justify-content-end p-3 ml-n2" id="navbarNavDropdown">
-    <ul className="navbar-nav me-auto">
-      <li className="nav-item active p-2">
-        <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+  <div className={[CORE['collapse'],  CORE['navbar-collapse'], CORE['justify-content-end'] ,CORE['p-3'] ,CORE['ml-n2']].join(" ")} id="navbarNavDropdown">
+    <ul className={[CORE['navbar-nav'], CORE['me-auto']].join(" ")}>
+      <li className={[CORE['nav-item'],  CORE['active'], CORE['p-2']].join(" ")}>
+        <Link className={CORE['nav-link']} to="/">Home <span className={CORE['sr-only']}>(current)</span></Link>
       </li>
-      <li className="nav-item p-2">
-        <a className="nav-link" href="#">Features</a>
+      <li className={[CORE['nav-item'], CORE['p-2']].join(" ")}>
+        <Link className={CORE['nav-link']} to="/events">Events</Link>
+      </li>   <li className={[CORE['nav-item'], CORE['p-2']].join(" ")}>
+        <a className={CORE['nav-link']} href="#">Features</a>
       </li>
-      <li className="nav-item p-2">
-        <a className="nav-link" href="#">Pricing</a>
+      <li className={[CORE['nav-item'],CORE['p-2']].join(" ")}>
+        <a className={CORE['nav-link']} href="#">Pricing</a>
       </li>
-      <li className="nav-item p-2">
-        <a className="nav-link" href="#">Logout</a>
+      <li className={[CORE['nav-item'] ,CORE['p-2']].join(" ")}>
+        <a className={CORE['nav-link']} href="#">Logout</a>
       </li>
     
     </ul>

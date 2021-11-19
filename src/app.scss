@@ -90,8 +90,13 @@ form {
 
 
 .btnBorder{
-	border:1px solid#ff9900;
+	border:1px solid#ff9900 !important;
 	color:#ff9900 !important
+	
+}
+.btnBorderGrey{
+	border:1px solid#919090 !important;
+	color:#878787 !important
 	
 }
 .btnOrange{

@@ -3,6 +3,9 @@ import React from "react";
 import STYLES from '../custom.module.scss'
 import '../app.scss'
 import warning from '../utils/icons/warning.png'
+import {Details} from './Details.component';
+import CORE from '../index.module.scss'
+import UserImage from '../utils/images/Image.png'
 import $ from 'jquery';
 
 export const Content = ()=>{
@@ -25,36 +28,37 @@ export const Content = ()=>{
     },[])
     return(
         <div>
-<div className="p-5">
-    <div className="row">
-        <div className="col-md-6"><img src={warning} /></div>
-        <div className="col-md-6">
-        <h1 className="text-left AccountHeading">MY ACCOUNT</h1>    
-                <div className="form-group form-group-default required">
-                     <label className="control-label invisible">Name</label>
-                     <input type="text" name="project" id="project" className="form-control" required="" placeholder="Name"/>
-                    <div className="invalid-feedback">Required</div>
+<div className={CORE['p-5']}>
+    <div className={CORE['row']}>
+        <div className={CORE['col-md-6']}><img className={[CORE['img-thumbnail'], CORE['w-50']].join(" ")} src={UserImage} /></div>
+        <div className={CORE['col-md-6']}>
+        <h1 className={CORE['textLeft'] +' '+'AccountHeading'}>MY ACCOUNT</h1>    
+                <div className={[CORE['form-group'], CORE['form-group-default'], CORE['required']].join(" ")}>
+                     <label className={[CORE['control-label'],CORE['invisible']].join(" ")}>Name</label>
+                     <input type="text" name="project" id="project" className={CORE['form-control']} required="" placeholder="Name"/>
+                    <div className={CORE['invalid-feedback']}>Required</div>
                 </div>
         
-            <div className="row">
-                <div className="col-md-6"> <div className="form-group form-group-default required">
-                     <label className="control-label invisible">Mobile</label>
-                     <input type="text" name="project" id="project" className="form-control" placeholder="Mobile" required=""/>
-                    <div className="invalid-feedback">Required</div>
+            <div className={CORE['row']}>
+                <div className={CORE['col-md-6']}> <div className={[CORE['form-group'], CORE['form-group-default'], CORE['required']].join(" ")}>
+                     <label className={[CORE['control-label'], CORE['invisible']].join(" ")}>Mobile</label>
+                     <input type="text" name="project" id="project" className={CORE['form-control']} placeholder="Mobile" required=""/>
+                    <div className={CORE['invalid-feedback']}>Required</div>
                 </div></div>
-                <div className="col-md-6"> <div className="form-group form-group-default required">
-                     <label className="control-label invisible">Email</label>
-                     <input type="email" name="project" id="project" className="form-control" required="" placeholder="Email"/>
-                    <div className="invalid-feedback">Required</div>
+                <div className={CORE['col-md-6']}> <div className={[CORE['form-group'], CORE['form-group-default'], CORE['required']].join(" ")}>
+                     <label className={[CORE['control-label'], CORE['invisible']].join(" ")}>Email</label>
+                     <input type="email" name="project" id="project" className={CORE['form-control']} required="" placeholder="Email"/>
+                    <div className={CORE['invalid-feedback']}>Required</div>
                 </div></div>
             </div>
         </div>
     </div>
     
 </div>
-<div className="mt-0 p-md-5 p-4 mt-md-5 ">
-    <div className="text-center"><hr/></div>
+<div className={[CORE['mt-0'], CORE['p-md-5'], CORE['p-4'] ,CORE['mt-md-5']].join(" ")}>
+    <div className={CORE['textCenter']}><hr/></div>
     </div>
+    <Details/>
 </div>
 
 

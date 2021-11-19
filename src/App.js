@@ -2,7 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 import {Header} from './components/Header.component';
 import {Content} from './components/Content.component';
-import {Details} from './components/Details.component';
+import {Routes,Route} from 'react-router-dom';
+import {Events} from './components/Events.component';
+
 
 function App() {
   return (
@@ -22,8 +24,14 @@ function App() {
         </a>
       </header> */}
       <Header/>
+      <Routes>
+        <Route path="/" element={<Content />} />
+        <Route path="/events" element={<Events />} />
+      </Routes>
+      
+      {/* 
       <Content/>
-      <Details/>
+      <Details/> */}
     </div>
   );
 }
