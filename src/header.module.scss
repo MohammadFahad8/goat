@@ -176,4 +176,56 @@ a.article, a.article:hover {
     margin-right: -73px;
     color: white;
     font-size: x-large;
+
+}
+
+
+.mainLogo
+{
+
+width: 227px;
+height: 40px;
+left: 194px;
+top: 86px;
+
+font-family: SANS-SERIF;
+font-style: normal;
+font-weight: 800;
+font-size: 36px;
+line-height: 40px;
+text-transform: uppercase;
+
+color: #FFFFFF;
+}
+
+.miniLogo
+{
+	
+// margin-left: 9.03%;
+margin-right: 13px;
+margin-top:-13px;
+// margin-bottom: 91.37%;
+}
+
+
+@media (max-width: 575.98px) {
+
+	.mainLogo
+	{
+		font-size: 24px;
+		line-height: 27px;
+		width: 161.82px;
+height: 28.74px;
+	}
+	.miniLogo
+	{
+		width: 33.07px;
+height: 32px;
+	}
+	.logout-btn-mob
+{
+    margin-right: -28px;
+    
+
+}
 }

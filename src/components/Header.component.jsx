@@ -2,6 +2,9 @@ import React from 'react';
 import STYLES from '../custom.module.scss'
 import '../app.scss'
 import warning from '../utils/icons/warning.png'
+
+import logomini from '../utils/icons/Vector.png'
+
 import UserImage from '../utils/images/Image.png'
 import MainLogo from '../utils/images/LOGOIPSUM.png'
 import SIDEBAR from '../header.module.scss';
@@ -32,7 +35,9 @@ export const Header = ()=>{
     return(
 <div>
     
-    <div className= {[CORE['row'], CORE['justify-content-center'], CORE['textCenter'], CORE['w-100']].join(" ")+' '+ STYLES.BGwheat}>
+
+    <div style={{marginLeft:'0px'}} className= {[CORE['row'], CORE['justify-content-center'], CORE['textCenter'], CORE['w-100']].join(" ")+' '+ STYLES.BGwheat}>
+
       <div className={CORE['textCenter']}><img src={warning} width="20" height="20"/></div>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab incidunt, neque, 
 
     </div>
@@ -100,7 +105,8 @@ export const Header = ()=>{
     <span className={[CORE['navbar-toggler-icon'] , CORE['text-white']].join(" ")}></span>
   </button>
 
-  <a className={[CORE['navbar-brand'] , CORE['offset-md-1'], CORE['offset-0']].join(" ")} href="#"><img className={[CORE['w-50'], CORE['w-md-100']].join(" ")} src={MainLogo}/></a>
+  <a className={[CORE['navbar-brand'] , CORE['offset-md-1'], CORE['offset-0']].join(" ")} href="#"><span><img className={SIDEBAR['miniLogo']} src={logomini}/></span><span className={SIDEBAR['mainLogo']}>LOGO<span className={'text-orange'}>IPSUM</span></span></a>
+
   <div id="dismiss text-right" className={[CORE['d-md-none'], CORE['d-lg-none'],CORE['d-xl-none'], SIDEBAR['logout-btn-mob']].join(" ")} >
                    <i className={'fa fa-sign-out'+'  '+[CORE['mt-2'],CORE['float-right']].join(" ")}></i>
                </div>
