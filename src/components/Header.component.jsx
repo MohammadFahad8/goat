@@ -12,13 +12,7 @@ import {Link} from 'react-router-dom';
 import $ from 'jquery';
 import CORE from '../index.module.scss'
 export const Header = ()=>{
-  var x = SIDEBAR['navItem']
-  alert('.'+x)
-  
-  $(`.${x}`).on('click',()=>{
-
-    alert("F")
-  })
+ 
 
   const openPane = () =>
   {var s = SIDEBAR['sidebar']
@@ -120,29 +114,29 @@ export const Header = ()=>{
 
   <div className={[CORE['collapse'],  CORE['navbar-collapse'], CORE['justify-content-end'] ,CORE['p-3'] ,CORE['ml-n2']].join(" ")} id="navbarNavDropdown">
     <ul className={[CORE['navbar-nav'], CORE['me-auto']].join(" ")}>
-      <li className={[CORE['nav-item'],  CORE['active'], CORE['p-2']].join(" ")}>
+      <li className={[CORE['nav-item'],  CORE['active'],].join(" ")}>
         <Link className={[SIDEBAR['navItem'],CORE['nav-link']].join(" ")} to="/">Dashboard <span className={CORE['sr-only']}>(current)</span></Link>
       </li>
-      {/* <li className={[CORE['nav-item'], CORE['p-2']].join(" ")}>
+      {/* <li className={[CORE['nav-item'],].join(" ")}>
         <Link className={CORE['nav-link']} to="/events">Events</Link>
       </li> */}
-         <li className={[CORE['nav-item'], CORE['p-2']].join(" ")}>
+         <li className={[CORE['nav-item'],].join(" ")}>
            <div className={CORE['row']}>
              <div className={CORE['col-md-12']}>
-        <Link className={[SIDEBAR['navItem'],CORE['nav-link']].join(" ")} to="/account" >Account</Link>
+        <Link className={[SIDEBAR['navItem'],CORE['nav-link']].join(" ")} to="/account" style={{ color:'#fff !important' }}>Account</Link>
         </div>
         <div className={CORE['col-md-4']} >
 
         </div>
-        <div className={CORE['col-md-4']}  style={{borderBottom: '10px solid #86EAAE',marginBottom:'-32px' }}>
+        <div className={CORE['col-md-4']}  style={{borderBottom: '10px solid #86EAAE',marginBottom:'-24px' }}>
           <span style={{borderBottom: '10px solid red' }}></span>
         </div>
         </div>
       </li>
-      <li className={[CORE['nav-item'],CORE['p-2']].join(" ")}>
+      <li className={[CORE['nav-item']].join(" ")}>
         <a className={[SIDEBAR['navItem'],CORE['nav-link']].join(" ")} href="#">Help</a>
       </li>
-      <li className={[CORE['nav-item'] ,CORE['p-2']].join(" ")}>
+      <li className={[CORE['nav-item'] ].join(" ")}>
         <a  className={[SIDEBAR['navItem'],CORE['nav-link']].join(" ")} href="#">Logout</a>
       </li>
     
