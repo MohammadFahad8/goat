@@ -26,6 +26,7 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<Content />} />
+        <Route path="/account" element={<Content />} />
         <Route path="/events" element={<Events />} />
       </Routes>
       

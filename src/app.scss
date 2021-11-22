@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Almarai&display=swap');
 body {
 	color: #626262;
 	font-family: roboto;
+	font-family: 'Almarai';
 }
 form {
 	padding: 20px;
@@ -25,7 +27,7 @@ form {
 		&:after {
 			color: #f55753;
 			content: "*";
-			font-family: arial;
+			font-family: 'Almarai',  sans-serif !important;
 			font-size: 20px;
 			position: absolute;
 			right: 12px;
@@ -111,7 +113,7 @@ form {
 .btnOrange{
 	background-color:#FC732F;
 	color:white !important;
-	font-family: sans-serif !important;
+	font-family: 'Almarai',  sans-serif !important;
 
 	
 }
@@ -129,7 +131,7 @@ height: 54px;
 left: 635px;
 top: 220px;
 
-font-family: sans-serif;
+font-family: 'Almarai',  sans-serif !important;
 font-style: normal;
 font-weight: 800;
 font-size: 43px;
@@ -147,7 +149,7 @@ height: 40px;
 left: 130px;
 top: 688px;
 
-font-family: sans-serif;
+font-family: 'Almarai',  sans-serif !important;
 font-style: normal;
 font-weight: normal;
 font-size: 35px;
@@ -164,7 +166,14 @@ color: #212121;
 
 
 @media (max-width: 575.98px) {
-	
+	.fa-bars
+	{
+		width: 24px;
+		font-size: x-large;
+	}
+	.modal-content{
+		border-radius:20px !important;
+	}
 .selectconfig{
 	position: absolute;
 width: 282px;
@@ -172,7 +181,7 @@ height: 36px;
 left: 32px;
 top:1060px;
 
-font-family: sans-serif;
+font-family: 'Almarai',  sans-serif !important;
 font-style: normal;
 font-weight: normal;
 font-size: 31px;
@@ -192,7 +201,7 @@ height: 45px;
 left: 32px;
 margin-top: 50px;
 margin-bottom: 25px;
-font-family: sans-serif;
+font-family: 'Almarai',  sans-serif ;
 font-style: normal;
 font-weight: 800;
 font-size: 36px;

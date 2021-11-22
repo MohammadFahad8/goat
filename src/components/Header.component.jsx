@@ -12,7 +12,13 @@ import {Link} from 'react-router-dom';
 import $ from 'jquery';
 import CORE from '../index.module.scss'
 export const Header = ()=>{
+  var x = SIDEBAR['navItem']
+  alert('.'+x)
+  
+  $(`.${x}`).on('click',()=>{
 
+    alert("F")
+  })
 
   const openPane = () =>
   {var s = SIDEBAR['sidebar']
@@ -38,7 +44,7 @@ export const Header = ()=>{
 
     <div style={{marginLeft:'0px'}} className= {[CORE['row'], CORE['justify-content-center'], CORE['textCenter'], CORE['w-100']].join(" ")+' '+ STYLES.BGwheat}>
 
-      <div className={CORE['textCenter']}><img src={warning} width="20" height="20"/></div>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab incidunt, neque, 
+      <div className={CORE['textCenter']} style={{     padding:'10px',marginTop: '5px' }}>  <img src={warning} width="20" height="20"/></div><span style={{     padding:'10px',marginTop: '5px' }}>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab incidunt, neque, </span>
 
     </div>
     
@@ -97,12 +103,13 @@ export const Header = ()=>{
                    <li><a href="https://bootstrapious.com/p/bootstrap-sidebar" className="article">Back to article</a></li>
                </ul> */}
            </nav>
-        <nav className={[CORE['navbar'], CORE['navbar-expand-lg'], CORE['navbar-dark']].join(" ") +'  '+ STYLES.Navcolor}>
+        <nav className={[CORE['navbar'], CORE['navbar-expand-lg']].join(" ") +'  '+ STYLES.Navcolor}>
             { /*ORIGINAL <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button> */}
   <button className={CORE['navbar-toggler']} type="button"   onClick={openPane}  >
-    <span className={[CORE['navbar-toggler-icon'] , CORE['text-white']].join(" ")}></span>
+    {/* <span className={[CORE['navbar-toggler-icon'] , CORE['text-white']].join(" ")}></span> */}
+    <i className={'fa fa-bars ' + CORE['text-white']}></i>
   </button>
 
   <a className={[CORE['navbar-brand'] , CORE['offset-md-1'], CORE['offset-0']].join(" ")} href="#"><span><img className={SIDEBAR['miniLogo']} src={logomini}/></span><span className={SIDEBAR['mainLogo']}>LOGO<span className={'text-orange'}>IPSUM</span></span></a>
@@ -114,18 +121,29 @@ export const Header = ()=>{
   <div className={[CORE['collapse'],  CORE['navbar-collapse'], CORE['justify-content-end'] ,CORE['p-3'] ,CORE['ml-n2']].join(" ")} id="navbarNavDropdown">
     <ul className={[CORE['navbar-nav'], CORE['me-auto']].join(" ")}>
       <li className={[CORE['nav-item'],  CORE['active'], CORE['p-2']].join(" ")}>
-        <Link className={CORE['nav-link']} to="/">Home <span className={CORE['sr-only']}>(current)</span></Link>
+        <Link className={[SIDEBAR['navItem'],CORE['nav-link']].join(" ")} to="/">Dashboard <span className={CORE['sr-only']}>(current)</span></Link>
       </li>
-      <li className={[CORE['nav-item'], CORE['p-2']].join(" ")}>
+      {/* <li className={[CORE['nav-item'], CORE['p-2']].join(" ")}>
         <Link className={CORE['nav-link']} to="/events">Events</Link>
-      </li>   <li className={[CORE['nav-item'], CORE['p-2']].join(" ")}>
-        <a className={CORE['nav-link']} href="#">Features</a>
+      </li> */}
+         <li className={[CORE['nav-item'], CORE['p-2']].join(" ")}>
+           <div className={CORE['row']}>
+             <div className={CORE['col-md-12']}>
+        <Link className={[SIDEBAR['navItem'],CORE['nav-link']].join(" ")} to="/account" >Account</Link>
+        </div>
+        <div className={CORE['col-md-4']} >
+
+        </div>
+        <div className={CORE['col-md-4']}  style={{borderBottom: '10px solid #86EAAE',marginBottom:'-32px' }}>
+          <span style={{borderBottom: '10px solid red' }}></span>
+        </div>
+        </div>
       </li>
       <li className={[CORE['nav-item'],CORE['p-2']].join(" ")}>
-        <a className={CORE['nav-link']} href="#">Pricing</a>
+        <a className={[SIDEBAR['navItem'],CORE['nav-link']].join(" ")} href="#">Help</a>
       </li>
       <li className={[CORE['nav-item'] ,CORE['p-2']].join(" ")}>
-        <a className={CORE['nav-link']} href="#">Logout</a>
+        <a  className={[SIDEBAR['navItem'],CORE['nav-link']].join(" ")} href="#">Logout</a>
       </li>
     
     </ul>

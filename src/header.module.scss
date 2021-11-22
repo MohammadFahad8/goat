@@ -1,10 +1,10 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Almarai',  sans-serif !important;
 	background: #fafafa;
 }
 p {
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Almarai',  sans-serif !important;
 	font-size: 1.1em;
 	font-weight: 300;
 	line-height: 1.7em;
@@ -15,6 +15,17 @@ a, a:hover, a:focus {
 	text-decoration: none;
 	transition: all 0.3s;
 }
+
+.navItem
+{
+	color: rgba(255, 255, 255, 0.75) !important;
+}
+// .navItem:active
+// {
+// 	color: rgba(255, 255, 255, 1) !important;
+// 	border-bottom:10px solid #86EAAE;
+// }
+
 .navbar {
 	padding: 15px 10px;
 	background: #fff;
@@ -188,7 +199,7 @@ height: 40px;
 left: 194px;
 top: 86px;
 
-font-family: SANS-SERIF;
+font-family: 'Almarai',  sans-serif !important;
 font-style: normal;
 font-weight: 800;
 font-size: 36px;
